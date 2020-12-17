@@ -3079,7 +3079,7 @@ function initialiseGoogleAnalytics(){
 }
 
 function sendPageviewToGoogleAnalytics(){
-    ga('create', 'G-ZMD22L8TX5', 'auto');
+    ga('create', 'UA-185781776-1', 'auto');
     ga('require', 'eventTracker', {
         attributePrefix: 'data-'
     });
