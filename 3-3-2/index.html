@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20211124112911">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20211124113606">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -154,7 +154,7 @@ layout-indicator
 <!-- <div class="container"> -->
 
 
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
@@ -229,7 +229,7 @@ data-event-label="high"
     <div class="navbar navbar-default menu-without-widgets" id="main-nav">
       <ul class="top-level">
     <li id="menuToggle"
-        aria-label=""
+        aria-label="Menu toggle. Click to expand or collapse the menu."
         aria-haspopup="true">
         <button data-target="menu-mobile" aria-expanded="false">Menu</button>
         <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
@@ -263,7 +263,7 @@ data-event-label="high"
 
     </li>
     <li id="searchToggle"
-        aria-label=""
+        aria-label="Search toggle. Click to expand or collapse the search bar."
         aria-haspopup="true">
         <button data-target="search-mobile" aria-expanded="false">Search</button>
         <div id="search-mobile" class="menu-target">
@@ -308,7 +308,7 @@ data-event-label="high"
       >
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %><h6><% } else { %><h5><% } %>
           <span aria-hidden="true"><%=translations.t(fieldItem.label)%><i class="fa fa-chevron-down"></i></span>
-          <span class="sr-only"> <%=translations.t(fieldItem.label)%></span>
+          <span class="sr-only">Show sub-categories: <%=translations.t(fieldItem.label)%></span>
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %></h6><% } else { %></h5><% } %>
       </button>
       <div class="variable-options">
@@ -353,9 +353,9 @@ data-event-label="high"
 
 <script type="text/template" id="series_template">
   
-    <h4></h4>
+    <h4>Series</h4>
     <fieldset>
-      <legend class="sr-only"></legend>
+      <legend class="sr-only">Series</legend>
       <% _.each(serieses, function(seriesItem, index) { %>
         <% var checked = (selectedSeries) ? (selectedSeries==seriesItem) : (index==0); %>
         <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%></label>
@@ -364,7 +364,7 @@ data-event-label="high"
   
 </script>
 
-<script>translations['indicator'] = {"chart":"Chart","clear_all":"Clear all","clear_selections":"Clear selections","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading_map":"Loading map","map":"Map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","no_data_hint":"No options available because of filters above","select_all":"Select all","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","sub_categories":"Sub-categories","table":"Table","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
+<script>translations['indicator'] = {"annotation_2030_target":"2030 Target","annotation_series_break":"Series break","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_sdmx":"Download Source SDMX","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_configuration":"Edit Configuration","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_search":"Search","map_search_hide":"Hide search","map_search_show":"Show search","map_year_slider":"Year slider","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","unit":"Unit","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
 
 <script>translations['data'] = null;</script>
 
@@ -412,7 +412,7 @@ data-event-label="high"
   
 <div class="row metadata-available-indicator">
   <div class="col-xs-12">
-    <h2>Number of Tuberculosis cases</h2>
+    <h2>TB incidence (three year average)</h2>
   </div>
 </div>
 
@@ -429,9 +429,9 @@ data-event-label="high"
   data-indicatorid='indicator_3-3-2'
   data-id="3-3-2"
   data-country="Bristol"
-  data-charttitle="Number of Tuberculosis cases"
+  data-charttitle="TB incidence (three year average)"
   data-charttitles="null"
-  data-measurementunit="Number of Tuberculosis cases"
+  data-measurementunit="Per 100,000"
   data-xaxislabel=""
   data-showdata="true"
   data-graphtype="line"
@@ -444,7 +444,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="null"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;},{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -478,7 +478,7 @@ data-event-label="high"
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Number of Tuberculosis cases</caption>
+      <caption>TB incidence (three year average)</caption>
       <thead>
         
         
@@ -495,23 +495,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2001</td>
+          <td>2000 - 02</td>
           
           
           
-          <td class="table-value">12.9</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2002</td>
-          
-          
-          
-          <td class="table-value">13.15</td>
+          <td class="table-value">12.9035</td>
           
           
         </tr>
@@ -519,23 +507,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2003</td>
+          <td>2001 - 03</td>
           
           
           
-          <td class="table-value">16.06</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2004</td>
-          
-          
-          
-          <td class="table-value">16.1</td>
+          <td class="table-value">13.1485</td>
           
           
         </tr>
@@ -543,23 +519,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2005</td>
+          <td>2002 - 04</td>
           
           
           
-          <td class="table-value">18.35</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2006</td>
-          
-          
-          
-          <td class="table-value">18.6</td>
+          <td class="table-value">16.0587</td>
           
           
         </tr>
@@ -567,23 +531,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2007</td>
+          <td>2003 - 05</td>
           
           
           
-          <td class="table-value">18.86</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2008</td>
-          
-          
-          
-          <td class="table-value">18.95</td>
+          <td class="table-value">16.0992</td>
           
           
         </tr>
@@ -591,23 +543,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2009</td>
+          <td>2004 - 06</td>
           
           
           
-          <td class="table-value">18.78</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2010</td>
-          
-          
-          
-          <td class="table-value">19.45</td>
+          <td class="table-value">18.3535</td>
           
           
         </tr>
@@ -615,23 +555,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2011</td>
+          <td>2005 - 07</td>
           
           
           
-          <td class="table-value">19.55</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2012</td>
-          
-          
-          
-          <td class="table-value">20.55</td>
+          <td class="table-value">18.6011</td>
           
           
         </tr>
@@ -639,23 +567,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2013</td>
+          <td>2006 - 08</td>
           
           
           
-          <td class="table-value">21.52</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2014</td>
-          
-          
-          
-          <td class="table-value">20.56</td>
+          <td class="table-value">18.8641</td>
           
           
         </tr>
@@ -663,23 +579,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>2015</td>
+          <td>2007 - 09</td>
           
           
           
-          <td class="table-value">17.99</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2016</td>
-          
-          
-          
-          <td class="table-value">15.08</td>
+          <td class="table-value">18.945</td>
           
           
         </tr>
@@ -687,11 +591,119 @@ data-event-label="high"
         <tr>
           
           
-          <td>2017</td>
+          <td>2008 - 10</td>
           
           
           
-          <td class="table-value">12.77</td>
+          <td class="table-value">18.777</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009 - 11</td>
+          
+          
+          
+          <td class="table-value">19.4472</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010 - 12</td>
+          
+          
+          
+          <td class="table-value">19.5458</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011 - 13</td>
+          
+          
+          
+          <td class="table-value">20.5463</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012 - 14</td>
+          
+          
+          
+          <td class="table-value">21.5173</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013 - 15</td>
+          
+          
+          
+          <td class="table-value">20.558</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014 - 16</td>
+          
+          
+          
+          <td class="table-value">17.9947</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015 - 17</td>
+          
+          
+          
+          <td class="table-value">15.0821</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016 - 18</td>
+          
+          
+          
+          <td class="table-value">12.6938</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017 - 19</td>
+          
+          
+          
+          <td class="table-value">11.4716</td>
           
           
         </tr>
@@ -706,7 +718,7 @@ data-event-label="high"
     
     
     
-    <p>Unit of Measurement: Number of Tuberculosis cases</p>
+    <p>Unit of Measurement: Per 100,000</p>
     
     
   </div>
@@ -721,7 +733,7 @@ data-event-label="high"
   <div class="async-loaded spacer medium" style="display:none;">
 
     <div style="display: none;">
-  <span id="table-alternative"></span>
+  <span id="table-alternative">For tabular data alternative see Table tab.</span>
 </div>
 <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
   <li role="presentation" class="nav-item active">
@@ -744,7 +756,7 @@ data-event-label="Change to Table tab"
     
 
     <div id="dataset-size-warning" style="display:none" role="alert">
-      <i class="fa fa-bolt"><span class="sr-only"></span></i>
+      <i class="fa fa-bolt"><span class="sr-only">Warning:</span></i>
       There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
     </div>
 
@@ -753,7 +765,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Number of Tuberculosis cases</h4>
+          <h4 id="chart-heading" class="chart-title">TB incidence (three year average)</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -1011,7 +1023,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Unit of Measurement:</dt>
-        <dd>Number of Tuberculosis cases</dd>
+        <dd>Per 100,000</dd>
         
 
         
@@ -1034,7 +1046,7 @@ opensdg.chartConfigAlter(function(config, info) {
   </div>
   <div role="tabpanel" class="tab-pane" id="tableview">
     <div style="display: none;">
-      <span id="column-sort-info"></span>
+      <span id="column-sort-info">Click to sort by this column</span>
     </div>
     <div id="selectionsTable"></div>
 
@@ -1053,7 +1065,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Unit of Measurement:</dt>
-        <dd>Number of Tuberculosis cases</dd>
+        <dd>Per 100,000</dd>
         
 
         
@@ -1132,7 +1144,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            <p>Number of Tuberculosis cases</p>
+            <p>TB incidence (three year average)</p>
 
           
         </td>
@@ -1146,7 +1158,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator description </th>
         <td>
           
-            <p>Number of Tuberculosis cases</p>
+            <p>Average incidence of TB among 100,000 per population over a 3 year period</p>
 
           
         </td>
@@ -1174,7 +1186,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            <p>Number of Tuberculosis cases</p>
+            <p>Per 100,000</p>
 
           
         </td>
@@ -1188,7 +1200,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            
+            <p>Three year average incidence of TB per 100,000 population</p>
 
           
         </td>
@@ -1202,7 +1214,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            <p>No calculations</p>
+            <p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator.</p>
 
           
         </td>
@@ -1216,7 +1228,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>The data is based on a 3 year average due to sample size. The year given is the middle year of the sample. For example the sample years between 2001-2003 is displayed as 2002</p>
+            <p>Three year average incidence per 100,000 population. The numerator (the number of TB notifications in the 3 year period) is divided by the denominator (the sum of the mid-year population estimates for the same 3 year period) and multiplied by 100,000.</p>
 
           
         </td>
@@ -1236,8 +1248,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdg-bristol/sdg-data-bristol/commit/31dd934eb502b5ed6d9507ef4f75dbba0a569a56" target="_blank">
-                2020-12-17: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/sdg-bristol/sdg-data-bristol/commit/bf524592998992f3fc7a3ec414133a24be8adb48" target="_blank">
+                2021-08-03: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1263,8 +1275,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdg-bristol/sdg-data-bristol/commit/4ff6f3e4f395789a2613afdc8b981d3775d8ac3f" target="_blank">
-                2020-12-17: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/sdg-bristol/sdg-data-bristol/commit/a6f899f1d8fac183e92b9f09a7bf1cd4cb4b2d8b" target="_blank">
+                2021-09-15: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1620,7 +1632,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            <p>Annual (3 year rolling average)</p>
+            <p>Annual</p>
 
           
         </td>
@@ -1634,7 +1646,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            <p>2000</p>
+            <p>2000-02</p>
 
           
         </td>
@@ -1648,7 +1660,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            <p>England</p>
+            <p>Bristol</p>
 
           
         </td>
@@ -1668,8 +1680,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://fingertips.phe.org.uk/search/Tuberculosis#page/4/gid/1/pat/6/par/E12000009/ati/301/are/E06000023/iid/91361/age/1/sex/4/cid/4/tbm/1/page-options/car-do-0" target="_blank">
-                Fingertips phe <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://fingertips.phe.org.uk/profile/public-health-outcomes-framework/data#page/4/gid/1000044/pat/6/par/E12000009/ati/102/are/E06000023/iid/92488/age/1/sex/4" target="_blank">
+                TB Monitoring data <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1689,7 +1701,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            Aug 06, 2019
+            Nov 03, 2020
           
         </td>
         </tr>
@@ -1730,7 +1742,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            <p>profilefeedback@phe.gov.uk</p>
+            
 
           
         </td>
@@ -1744,7 +1756,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>The data is based on a 3 year average due to sample size</p>
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Every effort is made to ensure accuracy and completeness of ETS data, including web-based reporting, data cleaning and data integrity checks for data quality. However, responsibility for the accuracy and completeness of the data lies with the reporting clinic. Data for all previous years are updated using the most recent TB notification dataset. This update means that the values for a given area and year may be different (either smaller or larger) when compared to what has been shown on this profile in the past.
+</code></pre></div></div>
 
           
         </td>
@@ -1905,12 +1918,12 @@ ga('send', 'pageview');
 
 
 <script>translations['general'] = translations['general'] || {};
-    translations['general']['hide'] = '';</script>
+    translations['general']['hide'] = 'hide';</script>
 
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20211124112911'></script>
+<script src='/assets/js/sdg.js?v=20211124113606'></script>
 
 <script>
 $(function() {
